@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { setCurrentUser } from '../../redux/actionCreator';
 import andelaLogo from '../../images/andela-logo.svg';
 import cover from '../../images/cover.svg';
 import symbolG from '../../images/Google-white.svg';
 import videoSymbol from '../../images/video.svg';
 import fileSymbol from '../../images/file.svg';
-
 import './Login.scss';
 import TextLink from '../../components/text-link/TextLink';
 
-class Login extends Component {
+export class Login extends Component {
+
+  componentDidMount() {
+    this.authenticated();
+  }
+
+  authenticated = () => {
+    const { isAuthenticated, history, verifyUser } = this.props;
+    if(isAuthenticated){
+     history.push('/request');
+    }
+    verifyUser();
+  }
+
+  login = () => {
+    const url = `${process.env.ANDELA_AUTH_HOST}/login?redirect_url=${process.env.AUTH_REDIRECT_URL}`;
+    window.location.replace(url);
+  }
+
   render() {
     return (
       <div className="mdl-layout mdl-js-layout login-page">
@@ -24,7 +44,7 @@ class Login extends Component {
                   Travel Requests Made Easier
               </p>
 
-              <button type="button" className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored login-page__login-btn">
+              <button type="button" onClick={this.login} className="mdl-button mdl-js-button mdl-button--raised mdl-button--colored login-page__login-btn">
                 <img src={symbolG} alt="Google Symbol" className="login-page__google-white" />
                 <span className="login-page__login-to-get-started-text">
                  Login to Get Started
@@ -62,4 +82,22 @@ class Login extends Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  history: PropTypes.shape({}).isRequired,
+  verifyUser: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated
+  };
+};
+
+export const mapDispatchToProps = dispatch => {
+  return {
+    verifyUser: () => { dispatch({ type: setCurrentUser() }); }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

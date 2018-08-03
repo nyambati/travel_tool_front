@@ -1,8 +1,28 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import Login from '../../Login/Login';
+import sinon from 'sinon';
+import { shallow } from 'enzyme';
+import { Login, mapDispatchToProps } from '../../Login/Login';
 
-it('should render Login page correctly', () => {
-const tree = renderer.create(<Login />).toJSON();
-expect(tree).toMatchSnapshot();
+const props = {
+    verifyUser: () => {},
+    isAuthenticated: true,
+    history: {
+        push: jest.fn()
+    }
+};
+
+const shallowWrapper = shallow(<Login {...props} />);
+
+describe('Login Component', () => {
+    it('should render Login page correctly', () => {
+        const tree = shallow(<Login {...props} />);
+        expect(tree).toMatchSnapshot();
+    });
+
+    it('calls onClick event when login button is click', () => {
+        sinon.spy(shallowWrapper.instance(), 'login');
+        shallowWrapper.instance().login();
+        expect(shallowWrapper.instance().login.calledOnce).toEqual(true);
+      });
+
 });
