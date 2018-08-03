@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Authenticate from '../../../hoc/authHoc';
-import Request from '../../Request/Request';
+import Authenticate from '../authHoc';
+import Request from '../../views/Request/Request';
 
 const components = Authenticate(Request);
 

@@ -1,7 +1,11 @@
 import * as types from '../constants/actionTypes';
 
 
-export const setCurrentUser = () => types.SET_CURRENT_USER;
+export const setCurrentUser = () => {
+    return {
+        type: types.SET_CURRENT_USER
+    };
+ } ;
 
 
 export const setCurrentUserSuccess = (response) => {

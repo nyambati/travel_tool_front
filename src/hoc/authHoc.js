@@ -1,7 +1,8 @@
-/* eslint-disable */
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {withRouter} from "react-router-dom";
+import { withRouter } from 'react-router-dom';
+import { notAuthenticationMessage } from '../helper/toast';
 
 export default function (ComposedComponent) {
   /**
@@ -9,17 +10,18 @@ export default function (ComposedComponent) {
    *
    * @extends {React.Component}
  */
-  class Authenticate extends Component {
+class Authenticate extends Component {
     /**
      * @description run action on component 
      * verify if user is sign in or not
      * @param {any} props.params.token
      *
    */
-      componentWillMount(){
-          if(!this.props.isAuthenticated){
-            this.props.history.push("/")
-            alert("Sign in first")
+    componentWillMount(){
+          const { isAuthenticated, history } = this.props;
+          if(!isAuthenticated){
+            history.push('/');
+            notAuthenticationMessage();
         }
       }
   /**
@@ -31,15 +33,22 @@ export default function (ComposedComponent) {
    */
     render() {
       return (
-       <ComposedComponent {...this.props}/>
+        <ComposedComponent {...this.props} />
       );
     }
   }
-    const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
-})
-    return withRouter(
-      connect(mapStateToProps)
-      (Authenticate)
-    );
+
+Authenticate.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+  history: PropTypes.shape({}).isRequired,
+};
+  
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+return withRouter(connect(mapStateToProps)(Authenticate));
 }
+
+
+

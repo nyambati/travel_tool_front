@@ -1,5 +1,5 @@
-import * as actionTypes from '../../../constants/actionTypes';
-import * as actionCreator from '../../../actionCreator';
+import * as actionTypes from '../../constants/actionTypes';
+import * as actionCreator from '../actionCreators';
 
 const res = {
     isAuthenticated: true,
@@ -20,7 +20,7 @@ const error = {
 
 describe('Test for auth action', () => {
   it('create an action SET_CURRENT_USER to set user in store', (done) => {
-    expect(actionCreator.setCurrentUser()).
+    expect(actionCreator.setCurrentUser().type).
     toEqual('SET_CURRENT_USER');
     done();
 });

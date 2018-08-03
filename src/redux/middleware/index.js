@@ -1,9 +1,9 @@
 import { all } from 'redux-saga/effects';
-import userAuthSagas from './userAuthSagas';
+import { userAuth } from './userAuthSagas';
 
 function* rootSaga() {
     yield all([
-        userAuthSagas()
+        userAuth()
     ]);
 }
 
