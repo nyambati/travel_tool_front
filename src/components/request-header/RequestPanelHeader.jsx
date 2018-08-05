@@ -46,6 +46,7 @@ class RequestPanelHeader extends Component {
               </button>
 
             </div>
+
             <div className="ItemsPerPageSection">
               <div className="ItemsPerPageText">
                 Items per page
@@ -65,6 +66,7 @@ class RequestPanelHeader extends Component {
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       );

@@ -7,7 +7,7 @@ import Request from '../views/Request/Request';
 const Routes = () => (
   <Switch>
     <Route path="/login" component={Login} />
-    <Route path="/request" component={Request} />
+    <Route path="/requests" component={Request} />
   </Switch>
 );
 export default Routes;
