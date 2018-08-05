@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import icon from "../../images/Icon.svg";
+import React, { Component } from 'react';
+import icon from '../../images/Icon.svg';
 
 class RequestPanelHeader extends Component {
     render() {
