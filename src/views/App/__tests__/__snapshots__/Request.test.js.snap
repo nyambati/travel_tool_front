@@ -91,7 +91,9 @@ exports[`should render request header correctly 1`] = `
       <div
         className="ItemsPerPagePagination"
       >
-        <div>
+        <div
+          className="PaginateCounter"
+        >
           <span
             className="PaginateCounter"
           >
