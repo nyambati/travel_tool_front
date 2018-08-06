@@ -1,5 +1,43 @@
+@import url("../node_modules/material-design-lite/material.css");
+
+@font-face{
+  font-family: 'DIN Pro Black';
+  src: url('./fonts/FontFont - DINPro-Black.otf');
+}
+
+@font-face{
+  font-family: 'DIN Pro Bold';
+  src: url('./fonts/FontFont\ -\ DINPro-Black.otf');
+}
+
+@font-face{
+  font-family: 'DIN Pro Extlight';
+  src: url('./fonts/FontFont - DINPro-Extlight.otf');
+}
+
+@font-face{
+  font-family: 'DIN Pro Light';
+  src: url('./fonts/FontFont - DINPro-Light.otf');
+}
+
+@font-face{
+  font-family: 'DIN Pro Light Italic';
+  src: url('./fonts/FontFont - DINPro-LightItalic.otf');
+}
+
+@font-face{
+  font-family: 'DIN Pro Medium';
+  src: url('./fonts/FontFont - DINPro-Medium.otf');
+}
+
+@font-face{
+  font-family: 'DIN Pro';
+  src: url('./fonts/FontFont - DINPro.otf');
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+
