@@ -15,7 +15,7 @@ class RequestHeaderBottomRightSection extends PureComponent{
             </div>
 
             <div className="ItemsPerPagePagination">
-              <div>
+              <div className="PaginateCounter">
                 <span className="PaginateCounter">
                     10  
                 </span>
