@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import icon from '../../images/Icon.svg';
 
-class RequestHeaderBottomRightSection extends Component{
+class RequestHeaderBottomRightSection extends PureComponent{
     render(){
         return(
           <div className="ItemsPerPageSection">

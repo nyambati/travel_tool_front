@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class RequestHeaderBottomLeftSection extends Component{
+class RequestHeaderBottomLeftSection extends PureComponent{
     render(){
         return(
           <div className="OpenRequestsButtonSection">

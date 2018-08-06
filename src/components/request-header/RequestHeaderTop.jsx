@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class RequestHeaderTop extends Component{
+class RequestHeaderTop extends PureComponent{
     render(){
         return(
             // request header panel top part

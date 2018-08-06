@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import './Request.scss';
 import RequestPanelHeader from '../../components/request-header/RequestPanelHeader';
 
-class Request extends Component{
+class Request extends PureComponent{
     render(){
         return(
           <RequestPanelHeader />

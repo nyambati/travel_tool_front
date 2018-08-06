@@ -77,9 +77,13 @@ exports[`should render request header correctly 1`] = `
       className="ItemsPerPageSection"
     >
       <div
-        className="ItemsPerPageText"
+        className="ItemsPerPageTextSection"
       >
-        Items per page
+        <span
+          className="ItemsPerPageText"
+        >
+          Items per page
+        </span>
       </div>
       <div
         className="divider"
