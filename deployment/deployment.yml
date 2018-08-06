@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: travel-tool-deployment
+  labels:
+    app: travel-tool-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: travel-tool-app
+  template:
+    metadata:
+      labels:
+        app: travel-tool-app
+    spec:
+      containers:
+      - name: travel-tool-container
+        image: gcr.io/andela-learning/travel-tool-front
+        ports:
+        - containerPort: 5000
