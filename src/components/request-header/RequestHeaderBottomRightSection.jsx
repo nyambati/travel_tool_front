@@ -5,8 +5,10 @@ class RequestHeaderBottomRightSection extends Component{
     render(){
         return(
           <div className="ItemsPerPageSection">
-            <div className="ItemsPerPageText">
-                Items per page
+            <div className="ItemsPerPageTextSection">
+              <span className="ItemsPerPageText">
+                  Items per page
+              </span>
             </div>
 
             <div className="divider">

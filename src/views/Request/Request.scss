@@ -12,8 +12,7 @@
         top: 50px;
         height: 36px;
         margin-bottom: 46px;
-        
-
+    
         .requests {
             height: 23px;
             width: 89px;
@@ -136,11 +135,19 @@
             width: 174px;	
             border: 1px solid #D4D4D4;	
             border-radius: 1px;	
-            background-color: #F8F8F8;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-
+            .ItemsPerPageTextSection{
+                width: 116px;
+                height: 36px;
+                background-color: #F8F8F8;
+                border: 1px solid #D4D4D4;	
+                border-radius: 1px;	
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+            }
             .ItemsPerPageText{
                 height: 18px;	
                 width: 96px;	
@@ -154,7 +161,7 @@
             .divider{
                 box-sizing: border-box;	
                 height: 36px;	
-                width: 3px;	
+                width: 0px;	
                 border: 1px solid #D4D4D4;
             }
 
