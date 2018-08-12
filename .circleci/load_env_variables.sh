@@ -18,12 +18,11 @@ else
 fi
 
 
-generateEnvFile(){
-     cat <<EOF
+cat << EOF > $ROOT_DIR/.env
 REACT_APP_ANDELA_AUTH_HOST=$REACT_APP_ANDELA_AUTH_HOST
 REACT_APP_AUTH_REDIRECT_URL=$REACT_APP_AUTH_REDIRECT_URL
 EOF
-}
 
 
-generateEnvFile > $ROOT_DIR/.env
+
+# generateEnvFile > $ROOT_DIR/.env
